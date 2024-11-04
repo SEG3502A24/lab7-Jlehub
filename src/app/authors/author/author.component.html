@@ -1,0 +1,17 @@
+<div *ngIf="!selectedAuthor">
+  <h2>Aucun auteur trouvé avec cet ID.</h2>
+</div>
+
+<div *ngIf="selectedAuthor">
+  <h2>{{ selectedAuthor.firstName }} {{ selectedAuthor.lastName }}</h2>
+  <p>{{ selectedAuthor.biography }}</p>
+
+  <h3>Livres écrits :</h3>
+  <ul>
+    <li *ngFor="let book of selectedAuthor.books">
+      {{ book.title }} - {{ book.category }} ({{ book.year }})
+    </li>
+  </ul>
+</div>
+
+
